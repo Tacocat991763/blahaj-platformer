@@ -2358,7 +2358,10 @@ sources/0 = SubResource("TileSetAtlasSource_r657h")
 script/source = "extends Area2D
 
 # Choose a target position if you want to teleport them instead of killing them
-@export var teleport_target: Vector2 = Vector2(200, 150)
+@export var teleport_target: Vector2 = Vector2(200, 187)
+
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"player\") or body.name == \"Player\":
@@ -2387,39 +2390,40 @@ size = Vector2(4633.5, 40852)
 [node name="Node" type="Node" unique_id=642923309]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1557400382]
+position = Vector2(210, 187)
 script = ExtResource("1_e2u21")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1831116121]
-position = Vector2(218.00002, 185.99994)
+position = Vector2(2, -10.999999)
 scale = Vector2(1.5600001, 1.2800001)
 texture = ExtResource("2_bss38")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1927873282]
-position = Vector2(218.125, 198.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_imona")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1425184187]
-position = Vector2(260.5, 195)
+position = Vector2(43.500015, -4)
 shape = SubResource("RectangleShape2D_2ibk0")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Player" unique_id=1436429266]
-position = Vector2(185, 191)
+position = Vector2(-31.999985, -8)
 shape = SubResource("RectangleShape2D_rwhor")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Player" unique_id=315876410]
-position = Vector2(202, 218.5)
+position = Vector2(-14.999985, 19.5)
 shape = SubResource("RectangleShape2D_xfjfb")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Player" unique_id=267466025]
-position = Vector2(156, 177.5)
+position = Vector2(-60.999985, -21.5)
 shape = SubResource("RectangleShape2D_er05u")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Player" unique_id=1756555247]
-position = Vector2(215, 164.5)
+position = Vector2(-1.9999847, -34.5)
 shape = SubResource("RectangleShape2D_s6i18")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=79268247]
-position = Vector2(219, 109)
+position = Vector2(2.0000153, -90)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -2438,7 +2442,7 @@ position = Vector2(163, -253)
 script = SubResource("GDScript_imona")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1707829550]
-position = Vector2(-230, 1463)
+position = Vector2(-248, 1481)
 shape = SubResource("RectangleShape2D_2x2x4")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=352152758]
